@@ -6,8 +6,12 @@
 </template>
 
 <script>
+  import Posts from './components/Posts'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Posts
+  }
 }
 </script>
 

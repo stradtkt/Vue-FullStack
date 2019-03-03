@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   const posts = await loadPostCollection();
   res.send(await posts.find({}).toArray());
 });
-
+// POST
 router.post('/', async (req, res) => {
   const posts = await loadPostCollection();
   await posts.insertOne({
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
   });
   res.status(201).send();
 });
-
+// DELETE
 router.delete('/:id', async (req, res) => {
   const posts = await loadPostCollection();
   await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id)});
